@@ -38,13 +38,13 @@ Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint 20
 Latest Linux Mint versions (20.n) come with python3. Define the **python** command so that it runs python3 by installing the **python-is-python3** package:
 
 ```shell
-$ sudo apt-get install python-is-python3
+$ sudo apt install python-is-python3
 ```
 
 Additionally, install the **python3-virtualenv** package:
 
 ```shell
-$ sudo apt-get install python3-virtualenv
+$ sudo apt install python3-virtualenv
 ```
 
 ### Eclipse
