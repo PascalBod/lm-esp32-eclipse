@@ -49,35 +49,29 @@ $ sudo apt install python3-virtualenv
 
 ### Eclipse
 
-Go to the [Eclipse Installer download page](https://www.eclipse.org/downloads/packages/installer) and click on the [Eclipse 2021-09 (4.21) link](https://www.eclipse.org/downloads/packages/release/2021-09/r). Download the installer (Linux x86_64).
-
-Check the integrity of the downloaded file.
-
-Create the **~/DevTools** directory, and extract the contents of the downloaded file into it.
+Go to the [Eclipse Installer download page](https://www.eclipse.org/downloads/packages/installer) and download the Linux x86_64 version (2022-03 R at the time of writing). Check the integrity of the downloaded file with `sha512sum`. Create the **~/DevTools** directory, and extract the contents of the downloaded file into it.
 
 Run `~/DevTools/eclipse-installer/eclipse-inst`.
 
-Choose **Eclipse IDE for C/C++ Developers**. Keep the default path values.
+Choose **Eclipse IDE for C/C++ Developers**. Keep the default path values. Click on the **Install** button, accept the license.
 
-Click on the **Install** button, accept the license.
-
-At the end of the installation, you can choose to launch Eclipse, and keep it open for next steps.
+At the end of the installation, launch Eclipse, accept the proposed workspace, and keep Eclipse open for next steps. Eclipse version, at the time of writing, is 2022-03.
 
 ### Git
 
 Install git:
 
 ```shell
-$ sudo apt-get install git
+$ sudo apt install git
 ```
 
 ## Eclipse IDF plugin
 
-Start Eclipse, if not yet done from the installer. Keep the proposed workspace. Close the **Welcome** tab and then the **Donate** tab.
+Going back to Eclipse, close the **Welcome** tab.
 
-[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At time of writing, this is version 2.4.1.
+[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.4.2.
 
-Restart Eclipse.
+Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons, click on the **Restore** icon on the left-hand side of the window.
 
 ## ESP-IDF installation
 
