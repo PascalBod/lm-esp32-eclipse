@@ -72,6 +72,7 @@ Going back to Eclipse, close the **Welcome** tab.
 [Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.4.2.
 
 Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons, click on the **Restore** icon on the left-hand side of the window:
+
 ![](images/restoreIcon.png)
 
 ## ESP-IDF installation
