@@ -65,6 +65,14 @@ Install git:
 $ sudo apt install git
 ```
 
+### Ccache
+
+Ccache improves build time. Install it:
+
+```shell
+$ sudo apt install ccache
+```
+
 ## Eclipse IDF plugin
 
 Going back to Eclipse, close the **Welcome** tab.
