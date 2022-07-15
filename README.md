@@ -9,9 +9,9 @@ This short tutorial describes a way to make a virtual machine configured for ESP
 Versions are:
 
 * Linux Mint: 20.3
-* Eclipse for C/C++ Developers: 2021‑09 R
+* Eclipse for C/C++ Developers: 2021‑12 R
 * Eclipse IDF plugin: 2.4.1
-* ESP-IDF: 4.4
+* ESP-IDF: 4.4.1
 
 # Prerequisites
 
@@ -77,7 +77,7 @@ $ sudo apt install ccache
 
 Going back to Eclipse, close the **Welcome** tab.
 
-[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.4.2.
+[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.5.0.
 
 Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons, click on the **Restore** icon on the left-hand side of the window:
 
@@ -85,7 +85,7 @@ Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons,
 
 ## ESP-IDF installation
 
-[Install ESP-IDF from Eclipse](https://github.com/espressif/idf-eclipse-plugin#installing-esp-idf). Choose `v4.4` for the version, and select the `DevTools` directory as download directory.
+[Install ESP-IDF from Eclipse](https://github.com/espressif/idf-eclipse-plugin#installing-esp-idf). Choose `v4.4.1` for the version, and select the `DevTools` directory as download directory.
 
 ## Tools installation
 
