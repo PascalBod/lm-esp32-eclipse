@@ -8,22 +8,22 @@ This short tutorial describes a way to make a virtual machine configured for ESP
 
 Versions are:
 
-* Linux Mint: 20.3
-* Eclipse for C/C++ Developers: 2021‑12 R
-* Eclipse IDF plugin: 2.4.1
-* ESP-IDF: 4.4.1
+* Linux Mint: 21.1
+* Eclipse for C/C++ Developers: 2022‑09 R
+* Eclipse IDF plugin: 2.7.0
+* ESP-IDF: 4.4.3
 
 # Prerequisites
 
-* hardware: a 64-bit computer with enough memory so that the VM can be granted 8 GB, with a few tens of GB available on the disk, and one free USB A port
-* hardware (bis): an [Espressif ESP32-DevKitC](https://www.espressif.com/en/products/devkits/esp32-devkitc) with an USB A / micro USB B cable - any similar development board can be used
-* software development competencies: 
-  * basic knowledge of Linux (knowing the most common commands...)
-  * basic knowledge of VirtualBox (knowing how to create a virtual machine...)
+* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A port
+* Hardware (bis): an [Espressif ESP32-DevKitC](https://www.espressif.com/en/products/devkits/esp32-devkitc) with an USB A / micro USB B cable - any similar development board can be used
+* Software development competencies: 
+  * Basic knowledge of Linux (knowing the most common commands...)
+  * Basic knowledge of VirtualBox (knowing how to create a virtual machine...)
 
 # Creation of the VM
 
-Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint 20.3 VM.
+Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint 21.1 VM.
 
 # VM configuration
 
@@ -35,7 +35,7 @@ Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint 20
 
 ### Python
 
-Latest Linux Mint versions (20.n) come with python3. Define the **python** command so that it runs python3 by installing the **python-is-python3** package:
+Latest Linux Mint version (21.1) comes with python3. Define the **python** command so that it runs python3 by installing the **python-is-python3** package:
 
 ```shell
 $ sudo apt install python-is-python3
@@ -49,13 +49,13 @@ $ sudo apt install python3-virtualenv
 
 ### Eclipse
 
-Go to the [Eclipse Installer download page](https://www.eclipse.org/downloads/packages/release/2021-12/r) and download the Linux x86_64 version. Important: be sure to download the 2021-12 version. Check the integrity of the downloaded file with `sha512sum`. Create the **~/DevTools** directory, and extract the contents of the downloaded file into it.
+Go to the [Eclipse Installer download page](https://www.eclipse.org/downloads/packages/release/2022-09/r) and download the Linux x86_64 version. Important: be sure to download the 2022-09 version. Check the integrity of the downloaded file with `sha512sum`. Create the **~/DevTools** directory, and extract the contents of the downloaded file into it.
 
 Run `~/DevTools/eclipse-installer/eclipse-inst`.
 
 Choose **Eclipse IDE for C/C++ Developers**. Keep the default path values. Click on the **Install** button, accept the license.
 
-At the end of the installation, launch Eclipse, accept the proposed workspace, and keep Eclipse open for next steps. Eclipse version is 2021-12.
+At the end of the installation, launch Eclipse, accept the proposed workspace, and keep Eclipse open for next steps. Eclipse version is 2022-09.
 
 ### Git
 
@@ -77,7 +77,7 @@ $ sudo apt install ccache
 
 Going back to Eclipse, close the **Welcome** tab.
 
-[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.5.0.
+[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.7.0.
 
 Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons, click on the **Restore** icon on the left-hand side of the window:
 
@@ -85,11 +85,29 @@ Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons,
 
 ## ESP-IDF installation
 
-[Install ESP-IDF from Eclipse](https://github.com/espressif/idf-eclipse-plugin#installing-esp-idf). Choose `v4.4.1` for the version, and select the `DevTools` directory as download directory.
+[Install ESP-IDF from Eclipse](https://github.com/espressif/idf-eclipse-plugin#installing-esp-idf). Choose `v4.4.3` for the version, and select the `DevTools` directory as download directory.
 
 ## Tools installation
 
-A message box offers to download the tools. Click on the **Yes** button. In the **Install Tools** dialog box that appears, click on **Install Tools** button.
+A message box offers to download the tools. Click on the **Yes** button. In the **Install Tools** dialog box that appears, click on **Install Tools** button. Note: for me, the **Install Tools** dialog box was displayed behind the Eclipse window.
+
+At the end of the installation, the following messages are displayed:
+
+```
+Copying OpenOCD Rules
+Copying File: /home/developer/.espressif/tools/openocd-esp32/v0.11.0-esp32-20220706/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules to destination: /etc/udev/rules.d/60-openocd.rules
+Unable to copy rules for OpenOCD to system directory, try running the eclipse with sudo command
+Configured CMake toolchain. You can check Preferences > C/C++ > CMake
+Install tools completed.
+```
+
+Consequently, I manually run the following command:
+
+```shell
+$ sudo cp /home/developer/.espressif/tools/openocd-esp32/v0.11.0-esp32-20220706/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules /etc/udev/rules.d/60-openocd.rules
+```
+
+I haven't check yet if openOCD works well.
 
 # ESP32-DevKitC connection
 
