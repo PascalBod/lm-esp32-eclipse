@@ -107,7 +107,7 @@ Consequently, I manually run the following command:
 $ sudo cp /home/developer/.espressif/tools/openocd-esp32/v0.11.0-esp32-20220706/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules /etc/udev/rules.d/60-openocd.rules
 ```
 
-I haven't check yet if openOCD works well.
+I haven't checked yet if openOCD works well.
 
 # ESP32-DevKitC connection
 
