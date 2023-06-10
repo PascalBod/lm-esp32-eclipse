@@ -10,7 +10,7 @@ Versions are:
 
 * Linux Mint: 21.1
 * Eclipse for C/C++ Developers: 2022‑12 R
-* Eclipse IDF plugin: 2.7.0
+* Eclipse IDF plugin: 2.10.0.202306060331
 * ESP-IDF: 5.0.2
 
 # Prerequisites
@@ -35,16 +35,10 @@ Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint 21
 
 ### Python
 
-Latest Linux Mint version (21.1) comes with python3. Define the *python* command so that it runs python3 by installing the *python-is-python3* package:
+Install two packages required by the installation of Espressif tools:
 
 ```shell
-$ sudo apt install python-is-python3
-```
-
-Additionally, install the *python3-virtualenv* package:
-
-```shell
-$ sudo apt install python3-virtualenv 
+sudo apt install python3-venv python3-pip
 ```
 
 ### Eclipse
@@ -77,9 +71,7 @@ $ sudo apt install ccache
 
 Going back to Eclipse, close the **Welcome** tab.
 
-[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.7.0.
-
-Beware: it may happen that the *Install Tools* window displayed during the installation is hidden by Eclipse main window. You have to bring it to the foreground.
+[Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release).
 
 Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons, click on the **Restore** icon on the left-hand side of the window:
 
@@ -87,17 +79,17 @@ Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons,
 
 ## ESP-IDF installation
 
-[Install ESP-IDF from Eclipse](https://github.com/espressif/idf-eclipse-plugin#installing-esp-idf). Choose `v4.4.3` for the version, and select the `DevTools` directory as download directory.
+[Install ESP-IDF from Eclipse](https://github.com/espressif/idf-eclipse-plugin#installing-esp-idf). Choose `v5.0.2` for the version, and select the `DevTools` directory as download directory.
 
 ## Tools installation
 
-A message box offers to download the tools. Click on the **Yes** button. In the **Install Tools** dialog box that appears, click on **Install Tools** button. Note: for me, the **Install Tools** dialog box was displayed behind the Eclipse window.
+A message box offers to download the tools. Click on the **Yes** button. In the **Install Tools** dialog box that appears, click on **Install Tools** button. Note: for me, the **Install Tools** dialog box was hidden by the Eclipse window. I had to bring it back to the foreground.
 
 At the end of the installation, the following messages are displayed:
 
 ```
 Copying OpenOCD Rules
-Copying File: /home/developer/.espressif/tools/openocd-esp32/v0.11.0-esp32-20220706/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules to destination: /etc/udev/rules.d/60-openocd.rules
+Copying File: /home/developer/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules to destination: /etc/udev/rules.d/60-openocd.rules
 Unable to copy rules for OpenOCD to system directory, try running the eclipse with sudo command
 Configured CMake toolchain. You can check Preferences > C/C++ > CMake
 Install tools completed.
@@ -106,7 +98,7 @@ Install tools completed.
 Consequently, I manually run the following command:
 
 ```shell
-$ sudo cp /home/developer/.espressif/tools/openocd-esp32/v0.11.0-esp32-20220706/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules /etc/udev/rules.d/60-openocd.rules
+$ sudo cp /home/developer/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules /etc/udev/rules.d/60-openocd.rules
 ```
 
 I haven't checked yet if openOCD works well.
