@@ -9,9 +9,9 @@ This short tutorial describes a way to make a virtual machine configured for ESP
 Versions are:
 
 * Linux Mint: 21.1
-* Eclipse for C/C++ Developers: 2022‑09 R
+* Eclipse for C/C++ Developers: 2022‑12 R
 * Eclipse IDF plugin: 2.7.0
-* ESP-IDF: 4.4.3
+* ESP-IDF: 5.0.2
 
 # Prerequisites
 
@@ -35,27 +35,27 @@ Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint 21
 
 ### Python
 
-Latest Linux Mint version (21.1) comes with python3. Define the **python** command so that it runs python3 by installing the **python-is-python3** package:
+Latest Linux Mint version (21.1) comes with python3. Define the *python* command so that it runs python3 by installing the *python-is-python3* package:
 
 ```shell
 $ sudo apt install python-is-python3
 ```
 
-Additionally, install the **python3-virtualenv** package:
+Additionally, install the *python3-virtualenv* package:
 
 ```shell
-$ sudo apt install python3-virtualenv
+$ sudo apt install python3-virtualenv 
 ```
 
 ### Eclipse
 
-Go to the [Eclipse Installer download page](https://www.eclipse.org/downloads/packages/release/2022-09/r) and download the Linux x86_64 version. Important: be sure to download the 2022-09 version. Check the integrity of the downloaded file with `sha512sum`. Create the **~/DevTools** directory, and extract the contents of the downloaded file into it.
+Go to the [Eclipse Installer download page](https://www.eclipse.org/downloads/packages/release/2022-12/r) and download the Linux x86_64 version. Important: be sure to download the 2022-12 version. Create the **~/DevTools** directory, and extract the contents of the downloaded file into it.
 
 Run `~/DevTools/eclipse-installer/eclipse-inst`.
 
 Choose **Eclipse IDE for C/C++ Developers**. Keep the default path values. Click on the **Install** button, accept the license.
 
-At the end of the installation, launch Eclipse, accept the proposed workspace, and keep Eclipse open for next steps. Eclipse version is 2022-09.
+At the end of the installation, launch Eclipse, accept the proposed workspace, and keep Eclipse open for next steps.
 
 ### Git
 
@@ -78,6 +78,8 @@ $ sudo apt install ccache
 Going back to Eclipse, close the **Welcome** tab.
 
 [Install the IDF plugin](https://github.com/espressif/idf-eclipse-plugin#installing-idf-plugin-using-update-site-url) (stable release). At the time of writing, this is version 2.7.0.
+
+Beware: it may happen that the *Install Tools* window displayed during the installation is hidden by Eclipse main window. You have to bring it to the foreground.
 
 Restart Eclipse. If Eclipse displays almost nothing, excepted a few small icons, click on the **Restore** icon on the left-hand side of the window:
 
