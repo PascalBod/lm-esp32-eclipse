@@ -1,14 +1,17 @@
 ### Table of contents
 
-Click on the ![](images/tocIcon.png) icon above.
+Click on the ![](images/tocIcon.png) icon, on the right-hand side above.
 
 # Overview
 
-This short tutorial describes a way to make a virtual machine configured for ESP32 software development with Eclipse, and explains how to start using it. The virtualization environment is VirtualBox, and the guest machine runs Linux Mint.
+This short tutorial describes a way to make a virtual machine configured for ESP32 software development with Espressif IDE, based on Eclipse. It also explains how to start using it. The virtualization environment is VirtualBox, and the guest machine runs Linux Mint.
 
 Versions are:
 
-* Linux Mint: 21.1
+* Linux Mint Xfce: 21.3
+
+==> go on from here
+
 * Eclipse for C/C++ Developers: 2022‑12 R
 * Eclipse IDF plugin: 2.10.0.202306060331
 * ESP-IDF: 5.0.2
