@@ -9,7 +9,7 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 Versions are:
 
 * Linux Mint Xfce: 21.3
-* Espressif-IDE 2.12.1
+* Espressif-IDE 2.12.1 (based on Eclipse IDE 2023-12)
 * ESP-IDF: 5.2.1
 
 # Prerequisites
@@ -108,13 +108,13 @@ You can assign the board to the virtual machine on a permanent basis with **Devi
 
 # Sample application
 
-[Create a new project](https://github.com/espressif/idf-eclipse-plugin#create-a-new-project-using-esp-idf-templates), choosing the *hello_world* template.
+[Create a new project](https://github.com/espressif/idf-eclipse-plugin#create-a-new-project-using-esp-idf-templates), choosing the *hello_world* template. The template selection is now on the same page as the project name input. Select **esp32c6** for project target.
 
 Build the project, as explained [here](https://github.com/espressif/idf-eclipse-plugin?tab=readme-ov-file#compiling-the-project).
 
-Flash the project, as explained [here](https://github.com/espressif/idf-eclipse-plugin?tab=readme-ov-file#flashing-the-project). If the console shows that the flashing operation does not start right after having requested it, i.e. the console waits on `Connecting........_____...`, hold down the board BOOT button until the flashing operation starts (a little bit more than 1 s). 
+Flash the project, as explained [here](https://github.com/espressif/idf-eclipse-plugin?tab=readme-ov-file#flashing-the-project). Check the target configuration by clicking the gear wheel on the right-hand side of the launch target drop-down: **Serial Port** should be set to **/dev/ttyACM0 USB JTAG/serial debug unit**.
 
-To display trace messages printed by the application, [start a terminal](https://github.com/espressif/idf-eclipse-plugin#viewing-serial-output).
+To display trace messages printed by the application, [start a terminal](https://github.com/espressif/idf-eclipse-plugin#viewing-serial-output). **Serial port** should be set to **/dev/ttyACM0**.
 
 # Upgrade
 
