@@ -8,22 +8,23 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 
 Versions are:
 
-* Linux Mint Xfce: 21.3
+* Linux Mint Xfce 21.3
 * Espressif-IDE 2.12.1 (based on Eclipse IDE 2023-12)
 * ESP-IDF: 5.2.1
 
 # Prerequisites
 
-* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A port
+* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A or USB C port
 * Hardware (bis): an [Espressif ESP32-C6-DevKitM-1](https://docs.espressif.com/projects/espressif-esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitm-1/index.html) with a USB C cable to connect it to the computer
 * Software development competencies: 
   * Basic knowledge of Linux (knowing the most common commands...)
   * Basic knowledge of VirtualBox (knowing how to create a virtual machine...)
-  * Good knowledge of one programming language
 
 # Creation of the VM
 
 Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint Xfce 21.3 VM.
+
+In what follows, it is assumed that the user's account username is `developer`.
 
 # VM configuration
 
@@ -47,13 +48,19 @@ Install **python3-venv** and **python3-pip** packages.
 
 Install **git** package.
 
+### Optional: Ccache
+
+Ccache can improve build time.
+
 ## Espressif-IDE
 
 [Download the Linux version of the Espressif-IDE](https://github.com/espressif/idf-eclipse-plugin/blob/master/docs/Espressif-IDE.md#downloads).
 
 At the time of writing, the file name is `Espressif-IDE-2.12.1-linux.gtk.x86_64.tar.gz`.
 
-In the file manager, double-click the file and extract the content to the `~/DevTools` directory (to be created).
+Create the `~/DevTools` subdirectory, where Espressif-IDE will be installed. It can be any other directory name, or existing directory, but in what follows it is assumed that this is the installation directory.
+
+In the file manager, double-click the file and extract the content to the `~/DevTools` directory.
 
 Add a launcher to the main menu:
 * Right click on the main menu icon and select **Edit Applications**
@@ -70,7 +77,7 @@ Add a launcher to the main menu:
 
 Start Espressif-IDE with the launcher you just created.
 
-Modify the proposed workspace path, replacing it with `/home/developer/Dev/workspace`.
+Modify the proposed workspace path, replacing it with `/home/developer/Dev/workspace`. The default directory can be kept, or any other existing or non-existing directory can be chosen, but in what follows it is assumed that this directory contains all ESP32 projects.
 
 In Espressif-IDE window menu, select **Espressif > Download and Configure ESP-IDF**.
 
@@ -78,7 +85,7 @@ Keep the proposed v5.2.1 version. Set the download directory to `/home/developer
 
 Click the **Finish** button.
 
-After the ESP-IDF download completion, accept to install the tools. Beware: the **Install Tools** window wich is then displayed my be behind Espressif-IDE window. Ensure to bring it back to foreground. Keep the default values for ESP-IDF directory, for git location and python location, and click the **Install Tools** button.
+After the ESP-IDF download completion, accept to install the tools. Beware: the **Install Tools** window wich is then displayed may be displayed behind the Espressif-IDE window. Ensure to bring it back to foreground. Keep the default values for ESP-IDF directory, for git location and python location, and click the **Install Tools** button.
 
 When the **Progress** tab says `No operations to display at this time.`, the configuration is done.
 
@@ -108,27 +115,14 @@ You can assign the board to the virtual machine on a permanent basis with **Devi
 
 # Sample application
 
-[Create a new project](https://github.com/espressif/idf-eclipse-plugin#create-a-new-project-using-esp-idf-templates), choosing the *hello_world* template. The template selection is now on the same page as the project name input. Select **esp32c6** for project target.
+[Create a new project](https://github.com/espressif/idf-eclipse-plugin#create-a-new-project-using-esp-idf-templates), choosing the *hello_world* template. The template selection is now on the same page as the project name input. Select **esp32c6** for project target:
+
+![](images/projectCreation.png)
 
 Build the project, as explained [here](https://github.com/espressif/idf-eclipse-plugin?tab=readme-ov-file#compiling-the-project).
 
-Flash the project, as explained [here](https://github.com/espressif/idf-eclipse-plugin?tab=readme-ov-file#flashing-the-project). Check the target configuration by clicking the gear wheel on the right-hand side of the launch target drop-down: **Serial Port** should be set to **/dev/ttyACM0 USB JTAG/serial debug unit**.
+Flash the project, as explained [here](https://github.com/espressif/idf-eclipse-plugin?tab=readme-ov-file#flashing-the-project). Check the target configuration by clicking the gear wheel on the right-hand side of the launch target drop-down: **Serial Port** should be set to **/dev/ttyACM0 USB JTAG/serial debug unit**:
+
+![](images/targetConfiguration.png)
 
 To display trace messages printed by the application, [start a terminal](https://github.com/espressif/idf-eclipse-plugin#viewing-serial-output). **Serial port** should be set to **/dev/ttyACM0**.
-
-# Upgrade
-
-To upgrade ESP-IDF, select **Espressif > Download and Configure ESP-IDF** and select the ESP-IDF version to download. Once downloaded, the ESP-IDF plugin might ask you to install a new set of tools. Accept, and install the tools. 
-
-To upgrade the Eclipse IDF plugin, check [this section](https://github.com/espressif/idf-eclipse-plugin#how-do-i-upgrade-my-existing-idf-eclipse-plugin).
-
-
-
-### Ccache
-
-Ccache improves build time. Install it:
-
-```shell
-$ sudo apt install ccache
-```
-
