@@ -54,7 +54,7 @@ Ccache can improve build time.
 
 ## Espressif-IDE
 
-[Download the Linux version of the Espressif-IDE](https://github.com/espressif/idf-eclipse-plugin/blob/master/docs/Espressif-IDE.md#downloads).
+[Download the Linux version of the Espressif-IDE](https://github.com/espressif/idf-eclipse-plugin/blob/master/docs_readme/Espressif-IDE.md#downloads).
 
 At the time of writing, the file name is `Espressif-IDE-2.12.1-linux.gtk.x86_64.tar.gz`.
 
