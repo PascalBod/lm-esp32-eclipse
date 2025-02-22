@@ -9,7 +9,7 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 Versions are:
 
 * Linux Mint Xfce: 22.1
-* Espressif-IDE       2.12.1
+* Espressif-IDE: 3.2.0
 * ESP-IDF: 5.4
 
 # Prerequisites
@@ -35,15 +35,9 @@ Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint Xf
 
 Start the Software Manager: **Linux Mint Main Menu > Settings > Software Manager**.
 
-### Java
-
 Install **Openjdk-21-jdk**.
 
-### Python
-
 Install **Python3-venv** and **Python3-pip** packages.
-
-### Git
 
 Install **Git** package.
 
