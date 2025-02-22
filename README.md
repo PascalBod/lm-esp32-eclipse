@@ -14,16 +14,17 @@ Versions are:
 
 # Prerequisites
 
-* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A port
+* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A or USB C port
 * Hardware (bis): an [Espressif ESP32-C6-DevKitM-1](https://docs.espressif.com/projects/espressif-esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitm-1/index.html) with a USB C cable to connect it to the computer
 * Software development competencies: 
   * Basic knowledge of Linux (knowing the most common commands...)
   * Basic knowledge of VirtualBox (knowing how to create a virtual machine...)
-  * Good knowledge of one programming language
 
 # Creation of the VM
 
 Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint Xfce 22.1 VM.
+
+In what follows, it is assumed that the user's account username is `developer`.
 
 # VM configuration
 
@@ -47,13 +48,19 @@ Install **Git** package.
 $ sudo apt-get install git wget flex bison gperf cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 ```
 
+### Optional: Ccache
+
+Ccache can improve build time.
+
 ## Espressif-IDE
 
 [Download the Linux version of the Espressif-IDE](https://docs.espressif.com/projects/espressif-ide/en/latest/downloads.html#downloads).
 
 At the time of writing, the file name is `Espressif-IDE-3.2.0-linux.gtk.x86_64.tar.gz`.
 
-In the file manager, double-click the file and extract the content to the `~/DevTools` directory (to be created).
+Create the `~/DevTools` subdirectory, where Espressif-IDE will be installed. It can be any other directory name, or existing directory, but in what follows it is assumed that this is the installation directory.
+
+In the file manager, double-click the file and extract the content to the `~/DevTools` directory.
 
 Add a launcher to the main menu:
 * Right click on the main menu icon and select **Edit Applications**
@@ -70,7 +77,7 @@ Add a launcher to the main menu:
 
 Start Espressif-IDE with the launcher you just created.
 
-Modify the proposed workspace path, replacing it with `/home/developer/Dev/workspace`.
+Modify the proposed workspace path, replacing it with `/home/developer/Dev/workspace`. The default directory can be kept, or any other existing or non-existing directory can be chosen, but in what follows it is assumed that this directory contains all ESP32 projects.
 
 Follow the instructions of the [*ESP-IDF and Tools Installation*](https://docs.espressif.com/projects/espressif-ide/en/latest/installation.html).
 
