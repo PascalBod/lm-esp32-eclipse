@@ -8,9 +8,9 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 
 Versions are:
 
-* Linux Mint Xfce: 22.1
-* Espressif-IDE: 3.2.0
-* ESP-IDF: 5.4
+* Linux Mint Cinnamon 22.1
+* Espressif-IDE 3.3.0
+* ESP-IDF 5.4
 
 # Prerequisites
 
@@ -22,7 +22,7 @@ Versions are:
 
 # Creation of the VM
 
-Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint Xfce 22.1 VM.
+Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint Cinnamon 22.1 VM.
 
 In what follows, it is assumed that the user's account username is `developer`.
 
@@ -34,7 +34,7 @@ In what follows, it is assumed that the user's account username is `developer`.
 
 ## Prerequisites
 
-Start the Software Manager: **Linux Mint Main Menu > Settings > Software Manager**.
+Start the Software Manager: **Linux Mint Main Menu > Software Manager icon**: ![icon](images/softwareManagerIcon.png).
 
 Install **Openjdk-21-jdk**.
 
@@ -45,33 +45,27 @@ Install **Git** package.
 ### ESP-IDF prerequisites
 
 ```
-$ sudo apt-get install git wget flex bison gperf cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+$ sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 ```
-
-### Optional: Ccache
-
-Ccache can improve build time.
 
 ## Espressif-IDE
 
 [Download the Linux version of the Espressif-IDE](https://docs.espressif.com/projects/espressif-ide/en/latest/downloads.html#downloads).
 
-At the time of writing, the file name is `Espressif-IDE-3.2.0-linux.gtk.x86_64.tar.gz`.
+At the time of writing, the file name is `Espressif-IDE-3.3.0-linux.gtk.x86_64.tar.gz`.
 
 Create the `~/DevTools` subdirectory, where Espressif-IDE will be installed. It can be any other directory name, or existing directory, but in what follows it is assumed that this is the installation directory.
 
 In the file manager, double-click the file and extract the content to the `~/DevTools` directory.
 
 Add a launcher to the main menu:
-* Right click on the main menu icon and select **Edit Applications**
-* Select the `Development` directory
-* Click the **+** tool and select **Add Launcher**
+* Right click on the main menu icon and select **Edit Menu**
+* Select the `Programming` category
+* Click the **New Item** button
+* For **Name** and **Comment**, type `Espressif-IDE`
 * For **Command**, select `/home/developer/DevTools/Espressif-IDE/espressif-ide`
 * Click the launcher icon and select `/home/developer/DevTools/Espressif-IDE/icon.xpm`
-* Click the `New Launcher` string and replace it by `Espressif-IDE`
-* Click the `Add comment` string and replace it by `Espressif-IDE`
-* Click the **Save Launcher** tool
-* Close the window
+* Click the **OK** button, close the window
 
 # Espressif-IDE configuration
 
@@ -79,7 +73,7 @@ Start Espressif-IDE with the launcher you just created.
 
 Modify the proposed workspace path, replacing it with `/home/developer/Dev/workspace`. The default directory can be kept, or any other existing or non-existing directory can be chosen, but in what follows it is assumed that this directory contains all ESP32 projects.
 
-Follow the instructions of the [*ESP-IDF and Tools Installation*](https://docs.espressif.com/projects/espressif-ide/en/latest/installation.html).
+Follow the instructions of the [*ESP-IDF and Tools Installation*](https://docs.espressif.com/projects/espressif-ide/en/latest/installation.html#esp-idf-tools-installation).
 
 A few notes about the above procedure:
 * Set the ESP-IDF download directory to `/home/developer/DevTools`
