@@ -14,7 +14,7 @@ Versions are:
 
 # Prerequisites
 
-* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A or USB C port
+* Hardware: a 64-bit computer with enough memory so that the VM can be granted 8 GB of RAM, with a few tens of GB available on the disk, and one free USB A or USB C port
 * Hardware (bis): an [Espressif ESP32-C6-DevKitM-1](https://docs.espressif.com/projects/espressif-esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitm-1/index.html) with a USB C cable to connect it to the computer
 * Software development competencies: 
   * Basic knowledge of Linux (knowing the most common commands...)
@@ -22,7 +22,7 @@ Versions are:
 
 # Creation of the VM
 
-Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint Cinnamon 22.1 VM.
+Check [this guide](https://github.com/PascalBod/lm-vm) to create a Linux Mint Cinnamon 22.1 VM. Assign 8 GB of RAM to the VM.
 
 In what follows, it is assumed that the user's account username is `developer`.
 
